@@ -1,0 +1,96 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    width: 300px;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    background-color: #87CEEB; /* Sky blue background */
+    margin-bottom: 10px;
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+    position: relative; /* Required for absolute positioning of the strikethrough */
+}
+
+li:hover {
+    transform: translateY(-2px);
+    background-color: #7ec0d4; /* Slightly darker on hover */
+}
+
+.completed {
+    color: black; /* Text color remains black */
+}
+
+.completed::after {
+    content: ''; /* Create a pseudo-element for the strikethrough */
+    position: absolute; /* Position it absolutely within the li */
+    left: 0; /* Start from the left */
+    right: 0; /* Stretch to the right */
+    top: 50%; /* Position it in the middle */
+    height: 3px; /* Increased thickness of the strikethrough line */
+    background-color: red; /* Set the strikethrough color to red */
+}
+
+button {
+    padding: 3px 6px; /* Smaller button size */
+    background-color: black; /* Black background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #555; /* Darker on hover */
+    transform: translateY(-1px);
+}
+
+#add-task {
+    padding: 8px; /* Smaller padding */
+    width: 100%;
+    margin-top: 10px;
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#add-task:hover {
+    background-color: #555; /* Darker on hover */
+    transform: translateY(-1px);
+}
+
+input[type="text"] {
+    width: 80%; /* Set width to 80% for center alignment */
+    padding: 10px;
+    margin: 0 auto; /* Center horizontally */
+    display: block; /* Make input a block element */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
